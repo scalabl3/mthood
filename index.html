@@ -1,0 +1,137 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Mt Hood</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.freefavicon.com/freefavicons/objects/snow-flake---light-152-189289.png"/>
+
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+
+  
+  <style>
+    html, body {
+      background: black;
+    }
+    img.cam {
+      width: 412px;
+    }
+    img.map {
+      margin-left: auto;
+      margin-right: auto;
+      width: 887px;
+      padding-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <div id="images" style="display: none;">
+
+    <!-- Add your site or application content here -->
+    <img class="cam" src="http://timberlinelodge.com/snowcameras/lodge.jpg" alt="Timberline Lodge">
+    <img class="cam" src="http://timberlinelodge.com/snowcameras/floodtop.jpg" alt="Jeff Flood">
+    <img class="cam" src="http://timberlinelodge.com/snowcameras//palmerbottom.jpg" alt="Palmer">
+    <img class="cam" src="http://timberlinelodge.com/snowcameras//brunotop.jpg" alt="Bruno">
+    <img class="cam" src="http://timberlinelodge.com/snowcameras//snowstake.jpg" alt="Snow Stake">
+    <img class="cam" src="http://www.skihood.com/cams/vista" alt="Vista">
+    <img class="cam" src="http://www.skihood.com/cams/vstop" alt="Top of Vista">
+    <img class="cam" src="http://www.skihood.com/cams/base" alt="Base">
+    <img class="cam" src="http://www.skihood.com/cams/top" alt="Top of Blue">
+    <img class="cam" src="http://www.skihood.com/cams/casc" alt="Top of Cascade">
+    <img class="cam" src="http://www.skihood.com/cams/heath" alt="Heather Canyon">
+
+    <!--<img class="cam" src="http://162.221.47.52/axis-cgi/jpg/image.cgi?resolution=2CIFEXP&date=1&dummy=1542832420324" alt="SkiBowl Upper">-->
+    <!--<img class="cam" src="http://162.221.47.54/snapshot.cgi?63f5a8107a6628231811cb97a9490492=ce370be4bc3b531d9ac364cca3c1af8d" alt="SkiBowl West">-->
+    <!--<img class="cam" src="http://162.221.47.53/axis-cgi/jpg/image.cgi?resolution=2CIFEXP&dummy=1542832521083" alt="SkiBowl Base">-->
+    <img id="summit" class="cam" src="" alt="Summit">
+
+    <!--<img class="cam" src="https://www.tripcheck.com/roadcams/cams/US26%20at%20Govt%20Camp%20Lp%20Rd_pid1776.JPG" alt="Government Camp 1">-->
+    <!--<img class="cam" src="https://www.tripcheck.com/roadcams/cams/US26%20at%20Govn%20Camp%20Maint_pid1899.JPG" alt="Government Camp 2">-->
+
+    <div style="align-items: center;text-align: center;width: 100%;margin: auto;">
+    <img class="map" src="http://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day1.png">
+    <img class="map" src="http://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day2.png">
+    <img class="map" src="http://www.wpc.ncep.noaa.gov/exper/nationalforecastchart/data/day3.png">
+    </div>
+
+    <img class="cam" src="http://www.mtbachelor.com/webcams/snowstake.jpg" alt="Snowstake">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/pmxlift.jpg" alt="West Village 1">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/gravitysportswv.jpg" alt="West Village 2">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/thecone.jpg" alt="West Village 3">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/brokentoppinelodge.jpg" alt="Pine Marten Lodge">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/outbackliftline.jpg" alt="Outback Express">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/summitliftlinehome.jpg" alt="Summit Lift">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/marshmallow.jpg" alt="Marshmallow Run">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/sunrisehome.jpg" alt="Sunrise Base">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/carnivallearningzone.jpg" alt="Carosel">
+    <img class="cam" src="http://www.mtbachelor.com/webcams/westvillage.jpg" alt="West Village 4">
+
+  </div>
+
+  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <script>
+
+    var reload_timer = 60*1*1000;
+    var i = null;
+
+    setTimeout(function(){ reloadImages(); }, 100);
+
+    function resetInterval() {
+
+      clearInterval(i);
+
+      i = setInterval(function(){
+        reloadImages();
+      }, reload_timer);
+
+    }
+
+    function reloadImages() {
+      $.each($("img"), function(){
+        var e = $(this);
+        src = e.attr("src");
+        src = src.split("?", 1)[0];
+        new_src = src + "?timestamp="  + new Date().getTime();
+        e.attr("src", new_src);
+        //console.log(src, new_src);
+      });
+    }
+
+    $(document).ready(function() {
+      $("#summit").attr("src", "http://summitskiarea.com/wp-content/uploads/CAM/summit.jpg?timestamp=" + new Date().getTime());
+
+
+
+      setTimeout(function(){ $("#images").show(); }, 1500);
+      //console.log($("#summit"));
+
+      resetInterval();
+
+    });
+  </script>
+
+</body>
+
+</html>
