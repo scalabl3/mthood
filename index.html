@@ -17,8 +17,8 @@
   <link rel="shortcut icon" type="image/png" href="https://www.freefavicon.com/freefavicons/objects/snow-flake---light-152-189289.png"/>
 
 
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/main.css">
+  <!--<link rel="stylesheet" href="css/normalize.css">-->
+  <!--<link rel="stylesheet" href="css/main.css">-->
 
 
   
@@ -83,13 +83,33 @@
     <img class="cam" src="http://www.mtbachelor.com/webcams/carnivallearningzone.jpg" alt="Carosel">
     <img class="cam" src="http://www.mtbachelor.com/webcams/westvillage.jpg" alt="West Village 4">
 
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Firwood%20Rd_pid2331.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Cherryville%20Dr_pid2332.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/Brightwood2_pid1381.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/ZigZag_pid1511.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20EB%20at%20Arlie%20Mitchell%20Rd._pid1875.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20USFS%20Rd%20EB_pid4105.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Run%20Away%20Truck%20Ramp%20WB_pid4109.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20West%20of%20Mirror%20Lake%20Trailhead%20WB_pid4113.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Ski%20Bowl%20West%20EB_pid4117.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Govt%20Camp%20Lp%20Rd_pid1776.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/GovernmentCamp_pid624.jpg" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Govn%20Camp%20Maint_pid1899.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Trillium%20Lake%20EB_pid1887.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/US26%20at%20Hwy35_pid1881.JPG" alt="26">
+    <img class="cam" src="https://tripcheck.com/RoadCams/cams/ORE35%20at%20Meadows%20Dr%20SB_pid3874.jpg" alt="26">
+
   </div>
 
-  <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+  <div id="tline">
+
+  </div>
+
+  <!--<script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+  <!--<script src="js/plugins.js"></script>-->
+  <!--<script src="js/main.js"></script>-->
 
   <script>
 
@@ -119,6 +139,47 @@
       });
     }
 
+    function loadTimberline() {
+        $.getJSON('http://www.whateverorigin.org/get?url=' + encodeURIComponent('http://www.timberlinelodge.com/conditions') + '&callback=?', function(data){
+            // var $frame = $("<iframe src='about:blank'/>").hide();
+            // var $frame2 = $("<iframe src='about:blank'/>");
+            // $frame.appendTo('body');
+            // var doc = $frame.get(0).contentWindow.document;
+            // //var doc2 = $frame.get(0).contentWindow.document;
+            // doc.write(data.contents);
+            // var temp = $("#template_7_grid", doc);
+            // $("#tline").append(temp).then(function(){
+            //
+            // });
+            // //var $current = $("#template_7_grid", doc2);
+            // setTimeout(function() { $frame.remove(); }, 1000);
+            //cross platform xml object creation from w3schools
+
+            try //Internet Explorer
+            {
+                xmlDoc=new ActiveXObject("Microsoft.XMLDOM");
+                xmlDoc.async="false";
+                xmlDoc.loadXML(data);
+            }
+            catch(e)
+            {
+                try // Firefox, Mozilla, Opera, etc.
+                {
+                    parser=new DOMParser();
+                    xmlDoc=parser.parseFromString(data.contents,"text/xml");
+                }
+                catch(e)
+                {
+                    alert(e.message);
+                    return;
+                }
+            }
+
+            alert(xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue);
+
+        });
+    }
+
     $(document).ready(function() {
       $("#summit").attr("src", "http://summitskiarea.com/wp-content/uploads/CAM/summit.jpg?timestamp=" + new Date().getTime());
 
@@ -128,6 +189,7 @@
       //console.log($("#summit"));
 
       resetInterval();
+      loadTimberline();
 
     });
   </script>
